@@ -1,8 +1,7 @@
 (ns datascript.perf
   (:require
     [clojure.string :as str]
-    #?(:clj clojure.java.shell))
-  #?(:cljs (:require-macros datascript.perf)))
+    #?(:clj clojure.java.shell)))
 
 (def ^:const   enabled? true)
 (def ^:dynamic debug?   false)
