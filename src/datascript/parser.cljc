@@ -1,6 +1,5 @@
 (ns datascript.parser
   (:refer-clojure :exclude [distinct?])
-  #?(:cljs (:require-macros [datascript.parser :refer [deftrecord]]))
   (:require
     [clojure.set :as set]
     [datascript.db :as db #?(:cljs :refer-macros :clj :refer) [raise]]))
