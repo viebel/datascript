@@ -2,7 +2,6 @@
   (:require
     [clojure.string :as str])
   (:refer-clojure :exclude [make-array into-array array amap aget aset alength array? aclone])
-  #?(:cljs (:require-macros datascript.arrays))
   #?(:clj  (:import [java.util Arrays])))
 
 (defn- if-cljs [env then else]
