@@ -1,30 +1,21 @@
-(ns datascript.db
+(ns datascript.db-macros
   (:require
-    #?(:cljs [goog.array :as garray])
      clojure.walk
     [datascript.arrays :as da]
     [datascript.btset :as btset])
-  #?(:cljs (:require-macros [datascript.db :refer [case-tree combine-cmp raise defrecord-updatable cond-let]]))
   (:refer-clojure :exclude [seqable?]))
 
 ;; ----------------------------------------------------------------------------
-
-#?(:cljs
-   (do
-     (def Exception js/Error)
-     (def IllegalArgumentException js/Error)
-     (def UnsupportedOperationException js/Error)))
 
 (def ^:const tx0 0x20000000)
 (def ^:const default-schema nil)
 
 ;; ----------------------------------------------------------------------------
 
-#?(:clj
   (defmacro raise [& fragments]
     (let [msgs (butlast fragments)
           data (last fragments)]
-      `(throw (ex-info (str ~@(map (fn [m#] (if (string? m#) m# (list 'pr-str m#))) msgs)) ~data)))))
+      `(throw (ex-info (str ~@(map (fn [m#] (if (string? m#) m# (list 'pr-str m#))) msgs)) ~data))))
 
 (def seqable?
   #?(:cljs cljs.core/seqable?
