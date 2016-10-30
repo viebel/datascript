@@ -4,7 +4,7 @@
      clojure.walk
     [datascript.arrays :as da]
     [datascript.btset :as btset])
-  #?(:cljs (:require-macros [datascript.db :refer [case-tree combine-cmp raise defrecord-updatable cond-let]]))
+  #?(:cljs (:require-macros [datascript.db-macros :refer [case-tree combine-cmp raise defrecord-updatable cond-let]]))
   (:refer-clojure :exclude [seqable?]))
 
 ;; ----------------------------------------------------------------------------
