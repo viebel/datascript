@@ -34,7 +34,8 @@
   (:refer-clojure :exclude [iter])
   (:require
     [datascript.arrays :as da])
-  #?(:clj  (:import [java.util Arrays])))
+  #?(:clj  (:import [java.util Arrays])
+     :cljs (:require-macros [datascript.btset-macros :refer [half not==]])))
 
 #?(:clj
   (defmacro half [x]
