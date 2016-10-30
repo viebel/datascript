@@ -1,3 +1,5 @@
+(ns datascript.btset-macros)
+
 (defmacro half [x]
   `(unsigned-bit-shift-right ~x 1))
 
